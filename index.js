@@ -71,7 +71,7 @@ async function installRepos() {
 }
 
 async function setupDirectory() {
-	await fs.cp(`${process.execPath + "/templates/typescript"}`, config.path);
+	// add stuff here
 }
 
 async function getLanguage() {
