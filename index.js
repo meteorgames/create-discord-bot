@@ -6,6 +6,7 @@ import gradient from "gradient-string";
 import chalkAnimation from "chalk-animation";
 import figlet from "figlet";
 import { createSpinner } from "nanospinner";
+import { downloadTemplate } from "giget";
 import lmify from "lmify";
 import fs from "fs/promises";
 
@@ -30,6 +31,7 @@ async function packages() {
 
 	pkgs.normal.push("discord.js");
 	pkgs.normal.push("@types/node");
+	pkgs.normal.push("dotenv");
 	pkgs.saveDev.push("typescript");
 	pkgs.saveDev.push("tsx");
 
@@ -71,7 +73,25 @@ async function installRepos() {
 }
 
 async function setupDirectory() {
-	// add stuff here
+	const base = `github:meteorgames/create-discord-bot/templates/`;
+	await downloadTemplate(`${base}typescript`, {
+		dir: config.path,
+		force: true,
+	});
+
+	if (config.prettier) {
+		await downloadTemplate(`${base}prettier`, {
+			dir: config.path,
+			force: true,
+		});
+	}
+
+	if (config.eslint) {
+		await downloadTemplate(`${base}eslint`, {
+			dir: config.path,
+			force: true,
+		});
+	}
 }
 
 async function getLanguage() {

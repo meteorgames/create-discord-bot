@@ -8,13 +8,15 @@
 		"deploy:global": "tsx src/deploy/global.ts",
 		"deploy:guild": "tsx src/deploy/guild.ts"
 	},
-	"devDependencies": {
-		"@types/node": "^18.14.6",
-		"tsx": "^3.12.3",
-		"typescript": "^4.9.5"
-	},
 	"dependencies": {
-		"discord.js": "^14.7.1",
+		"@types/node": "^18.15.11",
+		"discord.js": "^14.8.0",
 		"dotenv": "^16.0.3"
+	},
+	"devDependencies": {
+		"eslint": "^8.37.0",
+		"prettier": "^2.8.7",
+		"tsx": "^3.12.6",
+		"typescript": "^5.0.2"
 	}
 }
